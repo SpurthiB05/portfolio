@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spurthi Billa</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0118;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Glow Background */
+    .glow {
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.4;
+      z-index: -1;
+      animation: float 15s ease-in-out infinite;
+    }
+
+    .g1 { background: #7c3aed; top: 10%; left: 10%; }
+    .g2 { background: #3b82f6; top: 60%; left: 60%; animation-delay: 5s; }
+    .g3 { background: #9333ea; top: 30%; left: 70%; animation-delay: 10s; }
+
+    @keyframes float {
+      0%,100% { transform: translate(0,0); }
+      50% { transform: translate(50px,-50px); }
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid rgba(139,92,246,0.2);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(124,58,237,0.6);
+    }
+
+    .section {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: 0.8s ease;
+    }
+
+    .section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .btn {
+      background: linear-gradient(90deg,#6366f1,#8b5cf6);
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #8b5cf6;
+    }
+
+    /* Typing */
+    .typing {
+      border-right: 2px solid #a78bfa;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(40, end) forwards, blink 1s infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Background -->
+<div class="glow g1"></div>
+<div class="glow g2"></div>
+<div class="glow g3"></div>
+
+<!-- Navbar -->
+<nav class="fixed w-full bg-black/30 backdrop-blur border-b border-purple-500/20 z-50">
+  <div class="max-w-6xl mx-auto flex justify-between px-6 py-4">
+    <h1 class="font-semibold text-purple-400">Spurthi</h1>
+    <div class="space-x-6 text-sm">
+      <a href="#objective">Objective</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="min-h-[80vh] flex flex-col justify-center max-w-5xl mx-auto px-6">
+
+  <h1 class="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-400 bg-clip-text text-transparent">
+    Spurthi Billa
+  </h1>
+
+  <p class="mt-4 text-gray-300 max-w-xl typing">
+    Computer Science student exploring AI, Data Science, and intelligent systems.
+  </p>
+
+  <!-- BUTTONS -->
+  <div class="mt-4 flex gap-4 flex-wrap">
+
+    <a href="#projects" class="btn">View Work</a>
+
+    <!-- ✅ RESUME BUTTON -->
+    <a href="resume.pdf" target="_blank" class="btn flex items-center gap-2">
+      📄 Resume
+    </a>
+
+    <a href="mailto:billaspurthi@gmail.com" class="border px-5 py-2 rounded">
+      Contact
+    </a>
+
+  </div>
+
+  <div class="mt-5 flex gap-6 text-sm text-gray-400">
+    <a href="https://github.com/SpurthiB05" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/spurthi-billa-349033358/" target="_blank">LinkedIn</a>
+  </div>
+</section>
+
+<!-- CAREER OBJECTIVE -->
+<section id="objective" class="section max-w-5xl mx-auto px-6 py-16">
+  <h2 class="text-2xl mb-6 text-purple-400">Career Objective</h2>
+
+  <div class="card">
+    <p class="text-gray-300 leading-relaxed">
+      Motivated Computer Science student seeking internship opportunities to apply my knowledge in 
+      Artificial Intelligence, Machine Learning, and Data Science.
+    </p>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section max-w-6xl mx-auto px-6 py-20">
+  <h2 class="text-2xl mb-10">Projects</h2>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="card">
+      <h3>Fake News Detection</h3>
+      <p class="text-gray-400 mt-2">ML model using NLP</p>
+      <a href="https://github.com/SpurthiB05/fake-news-detection-ml" target="_blank" class="text-purple-400 text-sm">View →</a>
+    </div>
+
+    <div class="card">
+      <h3>Student Performance Prediction</h3>
+      <p class="text-gray-400 mt-2">Prediction using ML</p>
+      <a href="https://github.com/SpurthiB05/student-performance-prediction-ml" target="_blank" class="text-purple-400 text-sm">View →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="section max-w-6xl mx-auto px-6 py-20">
+  <h2 class="text-2xl mb-8">Certifications</h2>
+
+  <div class="grid md:grid-cols-2 gap-4">
+    <a href="https://www.hackerrank.com/certificates/bb7f953ca541" class="card">Software Engineer Intern</a>
+    <a href="https://www.hackerrank.com/certificates/b687a7f81b30" class="card">Java</a>
+    <a href="https://www.hackerrank.com/certificates/33152f09963c" class="card">SQL</a>
+    <a href="https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_691205129c0596e22d0826d9_1765520053610_completion_certificate.pdf" class="card">GenAI Data Analytics</a>
+    <a href="https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/gmf3ypEXBj2wvfQWC_ifobHAoMjQs9s6bKS_691205129c0596e22d0826d9_1762797213905_completion_certificate.pdf" class="card">Cybersecurity</a>
+    <a href="https://infyspringboard.onwingspan.com/public-assets/infosysheadstart/cert/lex_auth_013749091701841920319_shared/1d24a7a4-6af1-4dff-886a-5cd77e4e3aca.pdf" class="card">GitHub Copilot</a>
+    <a href="https://infyspringboard.onwingspan.com/public-assets/infosysheadstart/cert/lex_auth_013719953643773952304_shared/a07ffc74-70e9-4011-a844-9e7296020e14.pdf" class="card">Prompt Engineering</a>
+    <a href="https://certificate.eduskillsfoundation.org/verify/48a1ae7217a616f7a11c/48a1ae7217a616f7a11c" class="card">Networking Internship</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section text-center py-20">
+  <h2 class="text-2xl mb-4">Contact</h2>
+  <a href="mailto:billaspurthi@gmail.com" class="btn">Send Email</a>
+</section>
+
+<footer class="text-center py-6 text-gray-500 text-sm">
+  © 2026 Spurthi Billa
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('.section');
+  window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+      if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
+        sec.classList.add('show');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
